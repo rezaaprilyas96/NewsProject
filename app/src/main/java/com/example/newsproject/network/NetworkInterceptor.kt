@@ -10,7 +10,7 @@ class NetworkInterceptor : Interceptor {
         var request = chain.request()
         val url = request.url
             .newBuilder()
-            .addQueryParameter("api_key", BuildConfig.API_KEY)
+            .addQueryParameter("apikey", BuildConfig.API_KEY)
             .build()
         request = request.newBuilder()
             .url(url)

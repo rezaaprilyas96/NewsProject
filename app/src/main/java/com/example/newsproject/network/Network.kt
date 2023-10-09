@@ -1,5 +1,6 @@
 package com.example.newsproject.network
 
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.newsproject.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -11,11 +12,11 @@ import java.util.concurrent.TimeUnit
 
 object Network {
 
-    fun retrofit(baseUrl: String = BuildConfig.API_BASE_URL): Retrofit {
+    fun retrofit(baseUrl: String = BuildConfig.API_BASE_URL, chuckerInterceptor: ChuckerInterceptor): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(createMoshiConverterFactory())
-            .client(okHttpClient())
+            .client(okHttpClient(chuckerInterceptor))
             .build()
     }
 
@@ -26,10 +27,11 @@ object Network {
         return MoshiConverterFactory.create(moshi)
     }
 
-    private fun okHttpClient(): OkHttpClient {
+    private fun okHttpClient(chuckerInterceptor: ChuckerInterceptor): OkHttpClient {
         val okHttpBuilder = OkHttpClient.Builder()
             .retryOnConnectionFailure(true)
             .addInterceptor(NetworkInterceptor())
+            .addInterceptor(chuckerInterceptor)
             .pingInterval(30, TimeUnit.SECONDS)
             .readTimeout(1, TimeUnit.MINUTES)
             .connectTimeout(1, TimeUnit.MINUTES)

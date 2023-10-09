@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.features.detailNews.DetailNewsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/young_blue"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/detail_news"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_detail_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_item"
+                    android:src="@drawable/file"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ImageContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_field_sources_detail_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:gravity="center"
+                    android:text="@string/sources"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_detail_news" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_value_sources_detail_news"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_value_description_detail_news"
+                    app:layout_constraintTop_toTopOf="@id/tv_field_sources_detail_news" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_field_description_detail_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:gravity="center"
+                    android:text="@string/description"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tv_field_sources_detail_news"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_value_sources_detail_news" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_value_description_detail_news"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_value_sources_detail_news"
+                    app:layout_constraintStart_toEndOf="@id/tv_field_description_detail_news"
+                    app:layout_constraintTop_toTopOf="@id/tv_field_description_detail_news" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_url_detail_news"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_marginTop="@dimen/size_12dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:gravity="end"
+                    android:textColor="@color/young_blue"
+                    android:textColorLink="@color/young_blue"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_field_sources_detail_news"
+                    app:layout_constraintTop_toBottomOf="@id/tv_value_description_detail_news" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

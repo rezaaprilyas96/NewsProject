@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NewsProject</string>
+    <string name="image_item">image item</string>
+    <string name="list_news">List News</string>
+    <string name="detail_news">Detail News</string>
+    <string name="sources">Sources : </string>
+    <string name="description">Description : </string>
+    <string name="cari_news">Cari News</string>
 </resources>
