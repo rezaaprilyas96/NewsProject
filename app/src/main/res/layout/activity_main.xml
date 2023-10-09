@@ -27,18 +27,18 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/et_main_search_data"
-                android:layout_width="@dimen/size_0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/size_12dp"
                 android:layout_marginTop="@dimen/size_12dp"
                 android:layout_marginEnd="@dimen/size_12dp"
-                android:layout_weight="1"
                 android:background="@drawable/background_stroke_gray_4_radius_10"
                 android:drawableStart="@drawable/ic_search"
                 android:drawablePadding="@dimen/size_16dp"
@@ -49,9 +49,6 @@
                 android:paddingEnd="@dimen/size_16dp"
                 android:paddingBottom="@dimen/size_12dp"
                 android:textSize="@dimen/text_size_14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="VisualLintTextFieldSize" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -62,8 +59,7 @@
                 android:padding="@dimen/size_4dp"
                 android:paddingHorizontal="@dimen/size_16dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintTop_toBottomOf="@+id/et_main_search_data"
                 tools:listitem="@layout/item_news" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
