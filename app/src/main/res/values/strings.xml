@@ -6,4 +6,6 @@
     <string name="sources">Sources : </string>
     <string name="description">Description : </string>
     <string name="cari_news">Cari News</string>
+    <string name="title">Title :</string>
+    <string name="url">URL :</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray5"
     tools:context=".presentation.features.detailNews.DetailNewsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -28,7 +29,9 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/size_16dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -72,6 +75,29 @@
 
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_field_title_detail_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:gravity="center"
+                    android:text="@string/title"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tv_field_sources_detail_news"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_value_sources_detail_news" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_value_title_detail_news"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_value_sources_detail_news"
+                    app:layout_constraintStart_toStartOf="@id/tv_value_description_detail_news"
+                    app:layout_constraintTop_toTopOf="@id/tv_field_title_detail_news" />
+
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_field_description_detail_news"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -82,7 +108,7 @@
                     android:textSize="@dimen/text_size_12sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/tv_field_sources_detail_news"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_value_sources_detail_news" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_value_title_detail_news" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_value_description_detail_news"
@@ -96,19 +122,38 @@
                     app:layout_constraintTop_toTopOf="@id/tv_field_description_detail_news" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_url_detail_news"
+                    android:id="@+id/tv_field_url_detail_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:gravity="center"
+                    android:text="@string/url"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tv_field_sources_detail_news"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_value_description_detail_news" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_value_url_detail_news"
                     android:layout_width="@dimen/size_0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/size_8dp"
-                    android:layout_marginTop="@dimen/size_12dp"
-                    android:layout_marginEnd="@dimen/size_8dp"
-                    android:gravity="end"
                     android:textColor="@color/young_blue"
                     android:textColorLink="@color/young_blue"
                     android:textSize="@dimen/text_size_12sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/tv_field_sources_detail_news"
-                    app:layout_constraintTop_toBottomOf="@id/tv_value_description_detail_news" />
+                    app:layout_constraintEnd_toEndOf="@id/tv_value_sources_detail_news"
+                    app:layout_constraintStart_toStartOf="@id/tv_value_description_detail_news"
+                    app:layout_constraintTop_toTopOf="@id/tv_field_url_detail_news" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_published_detail_news"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_12dp"
+                    android:text=""
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_value_sources_detail_news"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_value_url_detail_news" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>

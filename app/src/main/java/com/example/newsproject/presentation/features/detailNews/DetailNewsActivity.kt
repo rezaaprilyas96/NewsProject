@@ -50,14 +50,16 @@ class DetailNewsActivity : BindingActivity<ActivityDetailNewsBinding>() {
             }
 
             tvValueSourcesDetailNews.text = newsModel?.source
+            tvValueTitleDetailNews.text = newsModel?.title
             tvValueDescriptionDetailNews.text = newsModel?.description
-            tvUrlDetailNews.text = newsModel?.url
+            tvValueUrlDetailNews.text = newsModel?.url
+            tvPublishedDetailNews.text = newsModel?.published
         }
     }
 
     private fun setupOnClick() {
         with(binding) {
-            tvUrlDetailNews.setOnClickListener {
+            tvValueUrlDetailNews.setOnClickListener {
                 startActivity(
                     WebViewActivity.createIntent(
                         context = this@DetailNewsActivity,
